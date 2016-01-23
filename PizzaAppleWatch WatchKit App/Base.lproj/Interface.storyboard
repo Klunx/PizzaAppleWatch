@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9527.1" systemVersion="14F1605" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9525.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9513.1"/>
+    </dependencies>
+    <scenes>
+        <!--OpInicio-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="OpInicio" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="PizzaAppleWatch_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <button width="1" alignment="left" title="Iniciar pedido" id="2CC-pP-TrH">
+                            <connections>
+                                <action selector="iniciarPedido" destination="AgC-eL-Hgc" id="5b2-Oq-3nP"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="inicioBtn" destination="2CC-pP-TrH" id="Fsu-ki-GqZ"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-64" y="178"/>
+        </scene>
+        <!--OpTamanio-->
+        <scene sceneID="los-CG-k3E">
+            <objects>
+                <controller identifier="OpTamanio" id="XT4-2R-Pra" customClass="vistaOpciones" customModule="PizzaAppleWatch_WatchKit_Extension">
+                    <items>
+                        <label width="1" alignment="left" text="Elige el tamaño" textAlignment="left" numberOfLines="0" id="inA-li-ln7"/>
+                        <picker width="1" height="62" alignment="left" indicatorMode="shownWhileFocused" id="4JN-MQ-wbG">
+                            <connections>
+                                <action selector="agregarTamanioPizza:" destination="XT4-2R-Pra" id="ZWj-Cg-q9G"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="Agregar Masa" id="FYq-XG-phS">
+                            <connections>
+                                <action selector="agregarMasa" destination="XT4-2R-Pra" id="oRM-pA-3t5"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="pizzaTam" destination="inA-li-ln7" id="z41-Zv-dym"/>
+                        <outlet property="tamPicker" destination="4JN-MQ-wbG" id="day-2g-Jnp"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="79" y="178"/>
+        </scene>
+        <!--OpMasa-->
+        <scene sceneID="MNN-pq-QVn">
+            <objects>
+                <controller identifier="OpMasa" id="6Gv-yv-rXU" customClass="vistaMasa" customModule="PizzaAppleWatch_WatchKit_Extension">
+                    <items>
+                        <label width="134" alignment="left" text="Elige la masa" id="Vva-Bo-E3H"/>
+                        <picker height="66" alignment="left" id="Lus-Rh-wcx">
+                            <connections>
+                                <action selector="agregaMasaPizza:" destination="6Gv-yv-rXU" id="mOQ-tf-oll"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="Agrega el queso" id="ISW-ar-RKx">
+                            <connections>
+                                <action selector="agregarQueso" destination="6Gv-yv-rXU" id="NLc-s5-9Pn"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="masaPicker" destination="Lus-Rh-wcx" id="asj-dC-wpJ"/>
+                        <outlet property="pizzaMasaLbl" destination="Vva-Bo-E3H" id="wpi-1K-erT"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="221" y="178"/>
+        </scene>
+        <!--OpConfirmar-->
+        <scene sceneID="FBc-9x-4wk">
+            <objects>
+                <controller identifier="OpConfirmar" id="7zL-WV-wa8" customClass="vistaConfirmar" customModule="PizzaAppleWatch_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Label" numberOfLines="0" id="3IM-GR-wO8"/>
+                        <button width="1" alignment="left" title="Enviar a cocina" id="O0v-ET-AAM">
+                            <connections>
+                                <action selector="enviarPedido" destination="7zL-WV-wa8" id="mqg-3T-war"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="lblImpresionPedido" destination="3IM-GR-wO8" id="mtE-wp-y1h"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="644" y="178"/>
+        </scene>
+        <!--OpQueso-->
+        <scene sceneID="wRg-WS-PCF">
+            <objects>
+                <controller identifier="OpQueso" id="bR3-PA-1UG" customClass="vistaQueso" customModule="PizzaAppleWatch_WatchKit_Extension">
+                    <items>
+                        <label width="136" alignment="left" text="Elige el queso" id="y8s-LK-niD"/>
+                        <picker height="67" alignment="left" id="sJk-Q2-9MT">
+                            <connections>
+                                <action selector="agregarQuesoPedido:" destination="bR3-PA-1UG" id="RvF-I2-RAh"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="Agregar Ingredientes" id="HSQ-aI-02o">
+                            <connections>
+                                <action selector="agregarIngredientes" destination="bR3-PA-1UG" id="eRp-fX-34D"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="quesoLbl" destination="y8s-LK-niD" id="tky-U8-hKd"/>
+                        <outlet property="quesoPicker" destination="sJk-Q2-9MT" id="83V-j1-9OQ"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="362" y="178"/>
+        </scene>
+        <!--OpIngredientes-->
+        <scene sceneID="Q04-Ec-ECa">
+            <objects>
+                <controller identifier="OpIngredientes" id="8of-UX-98r" customClass="vistaIngredientes" customModule="PizzaAppleWatch_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Selecciona hasta 5 ingredientes" numberOfLines="0" id="VvM-vR-pif"/>
+                        <switch width="1" alignment="left" title="Jamón" id="9GY-qM-exY">
+                            <connections>
+                                <action selector="agregarJamon:" destination="8of-UX-98r" id="SG4-Ic-2nY"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Pepperoni" id="2i9-Om-sQX">
+                            <connections>
+                                <action selector="agregarPepperoni:" destination="8of-UX-98r" id="e0p-8A-Woo"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Pavo" id="IPy-8X-bWP">
+                            <connections>
+                                <action selector="agregarPavo:" destination="8of-UX-98r" id="OEg-ct-ZFa"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Salchicha" id="0ZG-Xt-0Iy">
+                            <connections>
+                                <action selector="agregarSalchicha:" destination="8of-UX-98r" id="PtZ-ea-gYu"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Aceituna" id="EMN-j1-OeK">
+                            <connections>
+                                <action selector="agregarAceituna:" destination="8of-UX-98r" id="MHy-3W-l4o"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Cebolla" id="QZN-HV-RhB">
+                            <connections>
+                                <action selector="agregarCebolla:" destination="8of-UX-98r" id="Tsx-En-j4H"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Pimiento" id="MrX-Ts-sVG">
+                            <connections>
+                                <action selector="agregarPimiento:" destination="8of-UX-98r" id="ZkG-ks-2SG"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Piña" id="Trg-nV-1fV">
+                            <connections>
+                                <action selector="agregarPinia:" destination="8of-UX-98r" id="CTX-H0-eOv"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Anchoa" id="fUv-p5-qk7">
+                            <connections>
+                                <action selector="agregarAnchoa:" destination="8of-UX-98r" id="3a6-Wm-ypp"/>
+                            </connections>
+                        </switch>
+                        <button width="1" alignment="left" title="Agregar Orden" id="TDA-AH-Xkc">
+                            <connections>
+                                <action selector="agregarConfirmar" destination="8of-UX-98r" id="xdk-AG-OWH"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="agregarOrderBtn" destination="TDA-AH-Xkc" id="sqa-Nc-Xde"/>
+                        <outlet property="ingAceituna" destination="EMN-j1-OeK" id="eOl-8i-uDP"/>
+                        <outlet property="ingAnchoa" destination="fUv-p5-qk7" id="7Pp-EL-77D"/>
+                        <outlet property="ingCebolla" destination="QZN-HV-RhB" id="hup-gm-h7Y"/>
+                        <outlet property="ingJamon" destination="9GY-qM-exY" id="9rF-WB-INe"/>
+                        <outlet property="ingPavo" destination="IPy-8X-bWP" id="9d5-99-YIw"/>
+                        <outlet property="ingPepperoni" destination="2i9-Om-sQX" id="FG1-ts-wZb"/>
+                        <outlet property="ingPimiento" destination="MrX-Ts-sVG" id="Hoo-yW-dmm"/>
+                        <outlet property="ingPiña" destination="Trg-nV-1fV" id="tPW-bS-29G"/>
+                        <outlet property="ingSalchicha" destination="0ZG-Xt-0Iy" id="gMf-hQ-PV2"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="503" y="332"/>
+        </scene>
+    </scenes>
+</document>
